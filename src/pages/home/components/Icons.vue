@@ -16,54 +16,20 @@
 <script>
 export default {
   name: 'Icons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      iconList: [{
-        id: '0001',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
-        desc: '天门山公园'
-      }, {
-        id: '0003',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '长沙必游'
-      }, {
-        id: '0004',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-        desc: '张家界公园'
-      }, {
-        id: '0005',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-        desc: '演出'
-      }, {
-        id: '0006',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png',
-        desc: '动植物园'
-      }, {
-        id: '0007',
-        imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/91a810441506568937171df66f754375.png',
-        desc: '红石林'
-      }, {
-        id: '0008',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png',
-        desc: '凤凰古城'
-      }, {
-        id: '0009',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
-        desc: '天门山公园'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
